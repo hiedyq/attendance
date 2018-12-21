@@ -11,4 +11,8 @@ class Shop extends BaseModel
   public function department() {
     return $this->hasMany( 'Department', 'shop_id', 'id' );
   }
+
+  public function user() {
+    return $this->hasMany( 'User', 'shop_id', 'id' );
+  }
 }

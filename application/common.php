@@ -11,6 +11,14 @@
 
 // 应用公共文件
 
+function checkObject2array( $rs ) {
+  if ( empty( $rs ) ) return [];
+  if ( gettype( $rs ) == 'object' ) {
+    return $rs->toArray();
+  }
+  return $rs;
+}
+
 function allow_domain_header() {
   $allow_domain = config( 'app_debug' ) ? config( 'local_allow_domain' ) 
     : config( 'remote_allow_domain' );
